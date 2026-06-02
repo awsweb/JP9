@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>東京スタイル | レディースファッション通販</title>
+<meta name="description" content="最新のレディースファッション、人気ブランド、セール商品を取り揃えた日本風のファッション通販サイト。" />
+
+<!-- Favicon (サイトアイコン) -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23000000'/%3E%3Ctext x='50%25' y='54%25' font-size='28' font-family='Arial, Helvetica, sans-serif' font-weight='700' text-anchor='middle' fill='white'%3EZJ%3C/text%3E%3C/svg%3E">
+<link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'%3E%3Crect width='180' height='180' rx='36' fill='%23000000'/%3E%3Ctext x='50%25' y='56%25' font-size='72' font-family='Arial, Helvetica, sans-serif' font-weight='700' text-anchor='middle' fill='white'%3EZJ%3C/text%3E%3C/svg%3E">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo", sans-serif;
+  background:#fafafa;
+  color:#222;
+  line-height:1.7;
+}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+.container{width:min(1200px,calc(100% - 40px));margin:auto}
+
+header{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:rgba(255,255,255,.95);
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid #eee;
+}
+.nav{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:18px 0;
+  gap:20px;
+}
+.logo{
+  font-size:28px;
+  letter-spacing:4px;
+  font-weight:700;
+}
+nav ul{
+  display:flex;
+  gap:28px;
+  list-style:none;
+  font-size:14px;
+  font-weight:600;
+}
+nav a:hover{color:#d97706}
+.search{
+  padding:10px 14px;
+  border:1px solid #ddd;
+  border-radius:30px;
+  width:220px;
+}
+
+.hero{padding:30px 0}
+.hero-grid{
+  display:grid;
+  grid-template-columns:2fr 1fr;
+  gap:20px;
+}
+.hero-main,.hero-side{
+  position:relative;
+  overflow:hidden;
+  border-radius:22px;
+  min-height:520px;
+}
+.hero-main img,.hero-side img{
+  width:100%;height:100%;object-fit:cover;
+  transition:transform .8s ease;
+}
+.hero-main:hover img,.hero-side:hover img{transform:scale(1.06)} 
+.overlay{
+  position:absolute;
+  inset:0;
+  background:linear-gradient(to top,rgba(0,0,0,.55),rgba(0,0,0,.1));
+  display:flex;
+  align-items:flex-end;
+  padding:40px;
+  color:#fff;
+}
+.overlay h1{
+  font-size:52px;
+  line-height:1.1;
+  margin-bottom:12px;
+}
+.overlay p{margin-bottom:18px;opacity:.95}
+.btn{
+  display:inline-block;
+  background:#fff;
+  color:#111;
+  padding:12px 24px;
+  border-radius:30px;
+  font-weight:700;
+  transition:.3s;
+}
+.btn:hover{transform:translateY(-2px) scale(1.03)} 
+
+.section{padding:70px 0}
+.section-title{
+  font-size:30px;
+  margin-bottom:30px;
+  letter-spacing:2px;
+}
+
+.brand-row{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(110px,1fr));
+  gap:24px;
+  text-align:center;
+}
+.brand-item img{
+  width:90px;height:90px;
+  border-radius:50%;object-fit:cover;
+  margin:0 auto 10px;
+  transition:.4s;
+  box-shadow:0 8px 20px rgba(0,0,0,.08);
+}
+.brand-item:hover img{transform:scale(1.12)} 
+.brand-item span{font-size:12px;font-weight:600}
+
+.category-grid,.products{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+  gap:28px;
+}
+
+.card,.product{
+  background:#fff;
+  border-radius:20px;
+  overflow:hidden;
+  box-shadow:0 10px 30px rgba(0,0,0,.05);
+  transition:.35s;
+}
+.card:hover,.product:hover{
+  transform:translateY(-8px);
+  box-shadow:0 22px 50px rgba(0,0,0,.12);
+}
+.card img,.product img{
+  width:100%;height:320px;object-fit:cover;
+  transition:transform .6s ease;
+}
+.card:hover img,.product:hover img{transform:scale(1.08)} 
+.card h3,.product-content{padding:18px}
+.product h4{font-size:16px;margin-bottom:6px}
+.price{font-size:20px;font-weight:700;color:#e11d48}
+.old-price{color:#999;text-decoration:line-through;font-size:14px;margin-left:8px}
+.rating{color:#f59e0b;font-size:14px;margin:8px 0}
+
+.newsletter{
+  background:#111;
+  color:#fff;
+  border-radius:28px;
+  padding:60px;
+  text-align:center;
+}
+.newsletter h2{font-size:40px;margin-bottom:10px}
+.newsletter p{opacity:.85;margin-bottom:25px}
+.newsletter form{display:flex;justify-content:center;gap:10px;flex-wrap:wrap}
+.newsletter input{
+  padding:14px 18px;
+  border:none;
+  border-radius:30px;
+  width:320px;
+}
+.newsletter button{
+  border:none;
+  background:#f59e0b;
+  color:#111;
+  padding:14px 28px;
+  border-radius:30px;
+  font-weight:700;
+  cursor:pointer;
+}
+
+footer{
+  background:#0d0d0d;
+  color:#ccc;
+  margin-top:80px;
+  padding:60px 0 30px;
+}
+.footer-grid{
+  display:grid;
+  grid-template-columns:2fr 1fr 1fr;
+  gap:40px;
+}
+footer h3,footer h4{color:#fff;margin-bottom:15px}
+footer ul{list-style:none}
+footer li{margin-bottom:8px}
+.copyright{
+  margin-top:30px;
+  padding-top:20px;
+  border-top:1px solid #222;
+  text-align:center;
+  font-size:14px;
+}
+
+@media (max-width:900px){
+  .hero-grid{grid-template-columns:1fr}
+  .hero-main,.hero-side{min-height:420px}
+  .overlay h1{font-size:36px}
+  .nav{flex-wrap:wrap}
+  nav ul{gap:14px;font-size:12px;flex-wrap:wrap}
+  .search{width:100%}
+  .footer-grid{grid-template-columns:1fr}
+  .newsletter{padding:40px 25px}
+  .newsletter h2{font-size:28px}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container nav">
+    <div class="logo">東京スタイル</div>
+    <nav>
+      <ul>
+        <li><a href="#brands">ブランド</a></li>
+        <li><a href="#categories">カテゴリー</a></li>
+        <li><a href="#sale">セール</a></li>
+        <li><a href="#pickup">おすすめ</a></li>
+      </ul>
+    </nav>
+    <input class="search" type="text" placeholder="商品を検索...">
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container hero-grid">
+    <div class="hero-main">
+      <img loading="lazy" src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=1400&q=80" alt="ファッション">
+      <div class="overlay">
+        <div>
+          <h1>2026 夏の新作コレクション</h1>
+          <p>人気ブランドの最新アイテムを今すぐチェック。</p>
+          <a href="#sale" class="btn">今すぐ見る</a>
+        </div>
+      </div>
+    </div>
+    <div class="hero-side">
+      <img loading="lazy" src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=900&q=80" alt="トレンド">
+      <div class="overlay">
+        <div>
+          <h2 style="font-size:30px;margin-bottom:8px;">2026 カラートレンド</h2>
+          <p>日本の最新ファッションスタイル。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="brands" class="section">
+  <div class="container">
+    <h2 class="section-title">人気ブランド</h2>
+    <div class="brand-row">
+      <div class="brand-item"><img loading="lazy" src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=300&q=80"><span>ナチュラル</span></div>
+      <div class="brand-item"><img loading="lazy" src="https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?auto=format&fit=crop&w=300&q=80"><span>モード</span></div>
+      <div class="brand-item"><img loading="lazy" src="https://images.unsplash.com/photo-1543163521-1bf539c55dd2?auto=format&fit=crop&w=300&q=80"><span>エレガント</span></div>
+      <div class="brand-item"><img loading="lazy" src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=300&q=80"><span>カジュアル</span></div>
+      <div class="brand-item"><img loading="lazy" src="https://images.unsplash.com/photo-1506629905607-53e82b7d5a4d?auto=format&fit=crop&w=300&q=80"><span>シンプル</span></div>
+      <div class="brand-item"><img loading="lazy" src="https://images.unsplash.com/photo-1491553895911-0055eca6402d?auto=format&fit=crop&w=300&q=80"><span>トレンド</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="categories" class="section" style="background:#fff">
+  <div class="container">
+    <h2 class="section-title">カテゴリー</h2>
+    <div class="category-grid">
+      <div class="card"><img loading="lazy" src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=600&q=80"><h3>トップス</h3></div>
+      <div class="card"><img loading="lazy" src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=600&q=80"><h3>ワンピース</h3></div>
+      <div class="card"><img loading="lazy" src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=600&q=80"><h3>スカート</h3></div>
+      <div class="card"><img loading="lazy" src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=600&q=80"><h3>アクセサリー</h3></div>
+    </div>
+  </div>
+</section>
+
+<section id="sale" class="section">
+  <div class="container">
+    <h2 class="section-title">セール商品</h2>
+    <div class="products">
+      <div class="product"><img loading="lazy" src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=800&q=80"><div class="product-content"><h4>フローラルワンピース</h4><div class="rating">★★★★★</div><div><span class="price">¥5,980</span><span class="old-price">¥9,980</span></div></div></div>
+      <div class="product"><img loading="lazy" src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=800&q=80"><div class="product-content"><h4>ブルードレス</h4><div class="rating">★★★★★</div><div><span class="price">¥6,980</span><span class="old-price">¥10,980</span></div></div></div>
+      <div class="product"><img loading="lazy" src="https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?auto=format&fit=crop&w=800&q=80"><div class="product-content"><h4>ミニマルスタイル</h4><div class="rating">★★★★☆</div><div><span class="price">¥4,980</span><span class="old-price">¥7,980</span></div></div></div>
+      <div class="product"><img loading="lazy" src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=800&q=80"><div class="product-content"><h4>カジュアルTシャツ</h4><div class="rating">★★★★★</div><div><span class="price">¥2,980</span><span class="old-price">¥4,980</span></div></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="pickup" class="section" style="background:#fff">
+  <div class="container">
+    <h2 class="section-title">おすすめアイテム</h2>
+    <div class="products">
+      <div class="product"><img loading="lazy" src="https://images.unsplash.com/photo-1503341455253-b2e723bb3dbb?auto=format&fit=crop&w=800&q=80"><div class="product-content"><h4>ホワイトシャツ</h4><div class="price">¥3,980</div></div></div>
+      <div class="product"><img loading="lazy" src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246?auto=format&fit=crop&w=800&q=80"><div class="product-content"><h4>サングラス</h4><div class="price">¥2,480</div></div></div>
+      <div class="product"><img loading="lazy" src="https://images.unsplash.com/photo-1543163521-1bf539c55dd2?auto=format&fit=crop&w=800&q=80"><div class="product-content"><h4>ハンドバッグ</h4><div class="price">¥8,980</div></div></div>
+      <div class="product"><img loading="lazy" src="https://images.unsplash.com/photo-1549298916-b41d501d3772?auto=format&fit=crop&w=800&q=80"><div class="product-content"><h4>サンダル</h4><div class="price">¥4,980</div></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="newsletter">
+      <h2>メールマガジン登録</h2>
+      <p>最新のセール情報や新作アイテムをお届けします。</p>
+      <form>
+        <input type="email" placeholder="メールアドレスを入力">
+        <button type="submit">登録する</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container footer-grid">
+    <div>
+      <h3>東京スタイル</h3>
+      <p>日本の最新トレンドを取り入れたファッション通販サイト。</p>
+    </div>
+    <div>
+      <h4>ショップ</h4>
+      <ul>
+        <li>新着商品</li>
+        <li>人気ランキング</li>
+        <li>アクセサリー</li>
+      </ul>
+    </div>
+    <div>
+      <h4>サポート</h4>
+      <ul>
+        <li>お問い合わせ</li>
+        <li>配送について</li>
+        <li>返品・交換</li>
+      </ul>
+    </div>
+  </div>
+  <div class="container copyright">© 2026 東京スタイル. 無断転載を禁じます.</div>
+</footer>
+
+</body>
+</html>
